@@ -58,6 +58,9 @@ As per our understanding of the problem statement, we created a responsive websi
 ![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/dba65c21-4a0a-46b2-886e-a56309ca2f9f)
 
 ### Databases
+![WhatsApp Image 2024-03-17 at 14 33 26_43aa0620](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/0980fca4-1fd5-4d1f-9fae-419d4bab8d89)
+![WhatsApp Image 2024-03-17 at 14 33 26_1537909a](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/78ec5589-d8a6-45e3-9ba3-91aa2658a55e)
+![WhatsApp Image 2024-03-17 at 14 33 26_83e4d668](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/edb681b5-fb58-49af-8853-6c8ff6d41a92)
 
 
 
