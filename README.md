@@ -4,7 +4,7 @@
 
 
 ## Description
-As per our understanding of the problem statement, we created a website for stock awareness, prediction, and personal portfolio. Stock prediction in terms of past data and predicting for future stock prices. In Stock recommendation we aim that our user can choose the best stock through prediction. In portfolio section, we track the investments made by users through visuals.
+As per our understanding of the problem statement, we created a responsive website for stock awareness, prediction, and personal portfolio. Stock prediction in terms of past data and predicting for future stock prices. In Stock recommendation we aim that our user can choose the best stock through prediction. In portfolio section, we track the investments made by users through visuals.
 
 ## Features
 - Sign Up and Sign In feature 
@@ -26,6 +26,7 @@ As per our understanding of the problem statement, we created a website for stoc
 - SQL lite
 
  ## ScreenShot 
+ ### Desktop View
 ![WhatsApp Image 2024-03-17 at 13 09 00_e9d7422e](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/c18be8cc-6d6a-433f-a838-95e57f730021)
 ![WhatsApp Image 2024-03-17 at 13 08 37_57bc7499](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/7464a47a-ab88-45c2-81b1-29218cea2f29)
 ![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/d1d679c1-f561-438a-908e-67b27d6c91af)
@@ -42,6 +43,22 @@ As per our understanding of the problem statement, we created a website for stoc
 ![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/dfdadc2e-0c72-478c-8716-a7ac8bda5fbb)
 ![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/5eb6a339-0805-48dd-bcef-5acbcffd39fe)
 ![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/7fec3961-db7a-4e28-9714-5b4cfbc82e4f)
+
+### Mobile View
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/0b52d730-9162-4f2e-ab97-294f5e39b0eb)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/4f9691de-0501-42a1-9b5b-b780ab1ef8ff)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/19d5234a-86c8-4519-9b48-5375e1ddd914)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/f17dcb86-2cde-4801-962e-0cb0f8a2fb41)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/ef775791-d7e6-4d72-a2c6-cb9b4c7c29ed)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/c961f651-d03a-417a-b5b0-2e40b1c2982d)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/e39b9504-c4d2-429d-9171-20da79750a3b)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/e38d8f1b-bd4a-4d36-b8a5-cf1c1165540f)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/17154562-9f7c-49d9-9e79-846893375e42)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/6fed8dff-4cee-4ca5-a5d7-7d6b0029115b)
+![image](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/dba65c21-4a0a-46b2-886e-a56309ca2f9f)
+
+### Databases
+
 
 
 
