@@ -62,6 +62,12 @@ As per our understanding of the problem statement, we created a responsive websi
 ![WhatsApp Image 2024-03-17 at 14 33 26_1537909a](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/78ec5589-d8a6-45e3-9ba3-91aa2658a55e)
 ![WhatsApp Image 2024-03-17 at 14 33 26_83e4d668](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/edb681b5-fb58-49af-8853-6c8ff6d41a92)
 
+### Model Trained
+![WhatsApp Image 2024-03-17 at 14 40 51_1775b6f2](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/42ddb168-7180-4feb-83e8-95c90f65e23f)
+![WhatsApp Image 2024-03-17 at 14 40 58_03bf64f4](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/1e60e22e-0fd5-4e28-bdd6-2512eb37bf3a)
+![WhatsApp Image 2024-03-17 at 14 41 08_3d9025ed](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/8160deb0-90c3-4a7a-b476-68b5d090e188)
+![WhatsApp Image 2024-03-17 at 14 41 12_b4aa1380](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/efb7ad3b-182e-4e72-832b-ebb373ee569a)
+![WhatsApp Image 2024-03-17 at 14 41 17_d4ea2538](https://github.com/Mandipbhattarai/PrediStock/assets/97532160/f61d8eaf-a773-41ad-9c10-d28a0986c9da)
 
 
 
