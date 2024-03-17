@@ -12,3 +12,5 @@ class add(models.Model):
     text=models.TextField()
     dates=models.DateField()
     
+class trends(models.Model):
+    email=models.EmailField()

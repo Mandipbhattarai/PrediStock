@@ -40,6 +40,18 @@ def LoginPage(request):
     return render(request,'login.html')
 
 def trendsPage(request):    
+    if request.method=="POST":                
+        email=request.POST.get('email')        
+        fdbk=trends(email=email)
+        subject="Welcome Stock.py"
+        send_mail(
+            subject,
+            "We are glad that you are here",
+            settings.EMAIL_HOST_USER,
+            [fdbk.email,"abhishekmc13051@gmail.com"]            
+        )
+        fdbk.save()               
+        return redirect('trends')
     return render(request,'trends.html')
 
 def send_email(request):

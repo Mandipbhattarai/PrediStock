@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stock Go</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/static/bootstrap.min.css" />
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-
     <!-- navbar starts here  -->
     <nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="#"><img src="/static/logo.png" alt="logo" width="90px" height="40px"/></a>
+        <a class="navbar-brand" href="#"
+          ><img src="/static/logo.png" alt="logo" width="220px"
+        /></a>
         <button
           class="navbar-toggler btn-close-danger"
           type="button"
@@ -28,7 +36,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item me-5">
               <a
-                class="nav-link active"
+                class="nav-link disabled"
                 aria-current="page"
                 href="{% url 'home' %}"
                 >Home</a
@@ -36,7 +44,10 @@
             </li>
 
             <li class="nav-item me-5">
-              <a class="nav-link active" aria-current="page" href="{% url 'trends' %}"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'trends' %}"
                 >Trends</a
               >
             </li>
@@ -49,36 +60,396 @@
               >
             </li>
             <li class="nav-item me-5">
-              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"
-                >Contact</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'contact' %}"
+                >Contact</a
+              >
             </li>
             <li>
-              <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+              <a href="{% url 'logout' %}" class="btn btn-success">Logout</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- navbar ends here  -->
-
-    <div class="container mb-5 image-home">
-      <div class="row">
-        <div class="col-lg-6 p-4 col-sm-12">
-          <div class="awareness">
-            <div class="heading-homepage">
-              Empowering Your Investment Decisions with AI.
-            </div>
-            <p class="about-system-header">
-              Our system uses advanced AI to provide personalized stock
-              recommendations based on your goals and risk tolerance.
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      chat-icon="https:&#x2F;&#x2F;cdn3d.iconscout.com&#x2F;3d&#x2F;premium&#x2F;thumb&#x2F;finance-chart-4899084-4081255.png"
+      chat-title="PrediStock"
+      agent-id="982b48ed-fbe0-4bd7-a2c3-f14d61a5f45b"
+      language-code="en"
+    ></df-messenger>
+    <!-- hero starts here  -->
+    <div class="hero mb-5">
+      <div class="container">
+        <div class="row flex-lg-row align-items-center g-5">
+          <div class="col-lg-5 col-12">
+            <h6 class="display-6 fw-bold lh-1 mb-3">
+              Discover Personalized Stock Recommendations
+            </h6>
+            <p class="lead">
+              Unlock personalized stock recommendations tailored to your goals
+              and risk profile. Discover smart investment opportunities that
+              align with your financial aspirations and preferences.
             </p>
-            <a class="btn btn-success" href="#"> Get Started </a>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-success btn-lg px-4 me-md-2">
+                Get Started
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-lg-7">
+            <img
+              src="/static/stockmarket.jpg"
+              class="d-block mx-lg-auto img-fluid"
+              alt="Bootstrap Themes"
+              width="700"
+              height="500"
+              loading="lazy"
+              style="border-radius: 20px"
+            />
           </div>
         </div>
-        <div class="col-lg-6"></div>
+      </div>
+    </div>
+    <!-- hero ends here  -->
+    <hr class="my-5" style="color: white" />
+    <div class="container how-it-works mt-5">
+      <h2 class="text-center mb-5">How It Works ?</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="step">
+            <i class="fas fa-comments fa-5x mb-4"></i>
+            <h4>Start a Conversation</h4>
+            <p>
+              Initiate a chat with our system. Tell us about your investment
+              goals and risk preferences you have according to investment.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step">
+            <i class="fas fa-question-circle fa-5x mb-4"></i>
+            <h4>Answer Relevant Questions</h4>
+            <p>
+              We'll ask you relevant questions to understand your preferences.
+              Are you a long-term investor? What sectors interest you?
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step">
+            <i class="far fa-thumbs-up fa-5x mb-4"></i>
+            <h4>Get Personalized Recommendations</h4>
+            <p>
+              Based on your input, our system generates personalized stock
+              recommendations. You'll receive real-time insights.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 pie-chart-box">
+          <div class="piechart-main">
+            <div>
+              <h2 class="mb-5">Stock Returns of Last Year by Sector</h2>
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h2 class="mb-5 ps-3">FAQs</h2>
+          <div class="accordian-home">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Where should I invest for long-term growth?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    For long-term growth, consider investing in diversified
+                    index funds or exchange-traded funds (ETFs) that track the
+                    performance of the overall stock market.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    What are the best options for short-term investments?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    For short-term investments, consider high-yield savings
+                    accounts, certificates of deposit (CDs), or short-term bond
+                    funds.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Is it a good idea to invest in individual stocks?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Investing in individual stocks can be risky, as the value of
+                    a single stock can be volatile. It's often recommended to
+                    diversify your investments to reduce risk.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    Are there any tax-efficient investment options?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Yes, some tax-efficient investment options include investing
+                    in tax-advantaged accounts like 401(k)s, IRAs, and Health
+                    Savings Accounts (HSAs).
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix"
+                    aria-expanded="false"
+                    aria-controls="collapseSix"
+                  >
+                    How can I invest in international markets?
+                  </button>
+                </h2>
+                <div
+                  id="collapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSix"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    You can invest in international markets through global
+                    mutual funds, international ETFs, or by directly purchasing
+                    stocks of foreign companies.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSeven"
+                    aria-expanded="false"
+                    aria-controls="collapseSeven"
+                  >
+                    What are the risks associated with investing in
+                    cryptocurrencies?
+                  </button>
+                </h2>
+                <div
+                  id="collapseSeven"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSeven"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Investing in cryptocurrencies carries risks such as price
+                    volatility, regulatory uncertainty, and security risks
+                    associated with digital wallets and exchanges.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseEight"
+                    aria-expanded="false"
+                    aria-controls="collapseEight"
+                  >
+                    How can I invest in commodities?
+                  </button>
+                </h2>
+                <div
+                  id="collapseEight"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingEight"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    You can invest in commodities through commodity futures
+                    contracts, exchange-traded funds (ETFs), or by purchasing
+                    physical commodities such as gold or silver.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container box-description-home my-5 col-lg-12 text-center"
+    ></div>
+
+    <div class="people-thoughts">
+      <div class="container mt-lg-5 mb-lg-5">
+        <h2>Hear it from people</h2>
+        <p>See how people achieved financial peace of mind.</p>
+        <div class="row d-flex justify-content-between mt-4 p-2">
+          <div class="col-lg-3 ms-lg-5 testimonial mb-3">
+            <div class="card testimonials">
+              <div class="card-body">
+                <p class="card-text thoughts-card">
+                  Finance is not about numbers but about your aspirations and
+                  goals.
+                </p>
+                <strong>Nancy Duarte</strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 testimonials-yellow testimonial mb-3">
+            <div class="card yellow testimonials">
+              <div class="card-body">
+                <p class="card-text thoughts-card">
+                  The stock market is a device for transferring money from the
+                  impatient to the patient.
+                </p>
+                <strong>Warren Buffett </strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 testimonial mb-3 me-lg-5">
+            <div class="card testimonials">
+              <div class="card-body">
+                <p class="card-text thoughts-card">
+                  The goal of retirement is to live off your assets-not on them.
+                </p>
+                <strong>Frank Eberhart</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer section starts here  -->
+    <footer class="main-footer text-white">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-4 mt-3">
+            <h5>Contact Us</h5>
+            <p>Email: contact@scorpions.com<br />Phone: +91-123-456-7890</p>
+            <p>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook fa-2x"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter fa-2x"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin fa-2x"></i
+              ></a>
+            </p>
+          </div>
+          <div class="col-md-5 mt-3">
+            <h5>About Us</h5>
+            <p class="me-sm-5" style="text-align: justify">
+              Our Conversational Recommender System is designed to simplify the
+              complexities of the stock market, offering clear explanations and
+              insights to empower users with the knowledge needed to make
+              informed investment choices.
+            </p>
+          </div>
+          <div class="col-md-3 mt-3">
+            <h5 class="mb-4">Developers</h5>
+            <ul class="list-unstyled">
+              <li>Ranjeet Chaudhary</li>
+              <li>Abhishek Chavan</li>
+              <li>Sagar Pariyar</li>
+              <li>Mandip Bhattarai</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="py-2">
+        <div class="container text-center">
+          <p class="mb-0">
+            © 2024 <a href="#" class="text-body"> Team Scorpions</a>. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/static/piechart.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
     <script src="/static/script.js"></script>
   </body>
 </html>

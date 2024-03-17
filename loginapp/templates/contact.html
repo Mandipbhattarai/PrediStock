@@ -19,7 +19,9 @@
     <!-- navbar starts here  -->
     <nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="#"><img src="/static/logo.png" alt="logo" width="90px" height="40px"/></a>
+        <a class="navbar-brand" href="#"
+          ><img src="/static/logo.png" alt="logo" width="220px"
+        /></a>
         <button
           class="navbar-toggler btn-close-danger"
           type="button"
@@ -43,7 +45,10 @@
             </li>
 
             <li class="nav-item me-5">
-              <a class="nav-link active" aria-current="page" href="{% url 'trends' %}"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'trends' %}"
                 >Trends</a
               >
             </li>
@@ -54,20 +59,30 @@
                 href="{% url 'portfolio' %}"
                 >Portfolio</a
               >
-            </li>            
+            </li>
             <li class="nav-item me-5">
-              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"
+              <a
+                class="nav-link disabled"
+                aria-current="page"
+                href="{% url 'contact' %}"
                 >Contact</a
               >
             </li>
             <li>
-              <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+              <a href="{% url 'logout' %}" class="btn btn-success">Logout</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- navbar ends here  -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      chat-icon="https:&#x2F;&#x2F;cdn3d.iconscout.com&#x2F;3d&#x2F;premium&#x2F;thumb&#x2F;finance-chart-4899084-4081255.png"
+      chat-title="PrediStock"
+      agent-id="982b48ed-fbe0-4bd7-a2c3-f14d61a5f45b"
+      language-code="en"
+    ></df-messenger>
     <div class="container mb-5">
       <div class="row">
         <div class="col-lg-6 col-sm-12 mt-4">
@@ -75,9 +90,9 @@
           <p class="mb-3">
             Need to get in touch with us? You can fill out the enquiry form on
             our website, or if you prefer, you can
-            <a href="mailto:jerryt2714@gmail.com">contact us</a> directly. We strive to
-            respond to all inquiries promptly and look forward to hearing from
-            you.
+            <a href="mailto:jerryt2714@gmail.com">contact us</a> directly. We
+            strive to respond to all inquiries promptly and look forward to
+            hearing from you.
           </p>
           <div class="mt-4">
             <iframe
@@ -100,35 +115,44 @@
               <div class="mb-3">
                 <label for="exampleInputName" class="form-label">Name</label>
                 <input
-                  type="text" name="name"
+                  type="text"
+                  name="name"
                   class="form-control"
                   id="exampleInputName"
                   aria-describedby="nameHelp"
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputEmail" class="form-label" 
+                <label for="exampleInputEmail" class="form-label"
                   >Email address</label
                 >
                 <input
-                  type="email" name="email"
+                  type="email"
+                  name="email"
                   class="form-control"
                   id="exampleInputEmail"
                   aria-describedby="emailHelp"
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputMessage" class="form-label" 
+                <label for="exampleInputMessage" class="form-label"
                   >Message</label
                 >
                 <textarea
                   class="form-control"
                   id="exampleInputMessage"
-                  rows="3" name="message"
+                  rows="3"
+                  name="message"
                 ></textarea>
               </div>
               <div class="text-center">
-                <button type="submit" name="submit" class="btn btn-success"><a href="{% url 'send_email' %}">Send</a></button>
+                <button type="submit" name="submit" class="btn btn-success">
+                  <a
+                    href="{% url 'send_email' %}"
+                    style="text-decoration: none; color: #fff"
+                    >Send</a
+                  >
+                </button>
               </div>
             </form>
           </div>

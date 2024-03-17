@@ -13,12 +13,11 @@
   <link rel="stylesheet" href="/static/style.css" />
 
 </head>
-
-<!-- navbar starts here  -->
-<nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
+ <!-- navbar starts here  -->
+ <nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" href="#"
-      ><img src="/static/logo.png" alt="logo" class="logo-image"
+      ><img src="/static/logo.png" alt="logo" width="220px"
     /></a>
     <button
       class="navbar-toggler btn-close-danger"
@@ -43,7 +42,10 @@
         </li>
 
         <li class="nav-item me-5">
-          <a class="nav-link disabled" aria-current="page" href="{% url 'trends' %}"
+          <a
+            class="nav-link disabled"
+            aria-current="page"
+            href="{% url 'trends' %}"
             >Trends</a
           >
         </li>
@@ -52,28 +54,43 @@
             class="nav-link active"
             aria-current="page"
             href="{% url 'portfolio' %}"
-            >Portfolio</a>
+            >Portfolio</a
+          >
         </li>
         <li class="nav-item me-5">
-          <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"
-            >Contact</a>
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="{% url 'contact' %}"
+            >Contact</a
+          >
         </li>
         <li>
-          <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+          <a href="{% url 'logout' %}" class="btn btn-success">Logout</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-  <!-- navbar ends here  -->
+<!-- navbar ends here  -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  chat-icon="https:&#x2F;&#x2F;cdn3d.iconscout.com&#x2F;3d&#x2F;premium&#x2F;thumb&#x2F;finance-chart-4899084-4081255.png"
+  chat-title="PrediStock"
+  agent-id="982b48ed-fbe0-4bd7-a2c3-f14d61a5f45b"
+  language-code="en"
+></df-messenger>
 <div class="container">
   <div class="row">
     <div class="col-lg-9">
       <div class="container">
         <h2 class="mb-4">Latest Trends Posts</h2>
-        <label for="date">Select Date:</label>
-<input type="date" id="date" name="date" required>
-<button id="fetchButton">Fetch News</button>
+        <div class="form-group ">
+          <label for="date">Select Date:</label>
+          <input type="date" id="date" name="date" class="mb-4 form-control" required>
+          <button class="btn btn-success" id="fetchButton">Fetch News</button>
+        </div>
+        
         <br><br>
         <div class="row" id="newsContainer">
           <div class="col-md-6 mb-4">
@@ -205,10 +222,14 @@
         <h3 class="mb-3">Subscribe for daily news updates:</h3>
         
 <div class="input-group mb-3">
-    <input type="email" required class="form-control" placeholder="Email" aria-label="Email">
-    <span class="input-group-text btn btn-success">
-        <i class="fas fa-paper-plane"></i>
+  <form method="post">
+    {% csrf_token %}
+    <label for="email"></label>
+        <input type="email" placeholder="Email" name="email" id="email">
+        <button type="submit" class="btn btn-success ">Submit</button>
+        
     </span>
+  </form>
  
   </div>
       </div>

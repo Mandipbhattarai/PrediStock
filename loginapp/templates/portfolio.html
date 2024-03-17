@@ -15,11 +15,18 @@
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      chat-icon="https:&#x2F;&#x2F;cdn3d.iconscout.com&#x2F;3d&#x2F;premium&#x2F;thumb&#x2F;finance-chart-4899084-4081255.png"
+      chat-title="PrediStock"
+      agent-id="982b48ed-fbe0-4bd7-a2c3-f14d61a5f45b"
+      language-code="en"
+    ></df-messenger>
     <!-- navbar starts here  -->
     <nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
       <div class="container">
         <a class="navbar-brand" href="#"
-          ><img src="/static/logo.png" alt="logo" class="logo-image"
+          ><img src="/static/logo.png" alt="logo" width="220px"
         /></a>
         <button
           class="navbar-toggler btn-close-danger"
@@ -44,7 +51,10 @@
             </li>
 
             <li class="nav-item me-5">
-              <a class="nav-link active" aria-current="page" href="{% url 'trends' %}"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'trends' %}"
                 >Trends</a
               >
             </li>
@@ -57,12 +67,15 @@
               >
             </li>
             <li class="nav-item me-5">
-              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'contact' %}"
                 >Contact</a
               >
             </li>
             <li>
-                <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+              <a href="{% url 'logout' %}" class="btn btn-success">Logout</a>
             </li>
           </ul>
         </div>
@@ -80,23 +93,34 @@
             <div class="mb-3">
               <label for="expenseName" class="form-label">Stock Name</label>
               <input
-                type="text" name="name"
+                type="text"
+                name="name"
                 class="form-control"
                 id="expenseName"
-                required/>
+                required
+              />
             </div>
             <div class="mb-3">
               <label for="expenseAmount" class="form-label">Stock Price</label>
               <input
-                type="number" name="expense"
+                type="number"
+                name="expense"
                 class="form-control"
                 id="expenseAmount"
-                required/>
+                required
+              />
             </div>
             <div class="mb-3">
               <label for="expenseCategory" class="form-label"
-                >Stock Category</label>
-              <select class="form-select" id="expenseCategory" name="options" type="text" required>
+                >Stock Category</label
+              >
+              <select
+                class="form-select"
+                id="expenseCategory"
+                name="options"
+                type="text"
+                required
+              >
                 <option value="">Select Category</option>
                 <option value="technology">Technology</option>
                 <option value="communication">Communication</option>
@@ -114,14 +138,20 @@
             <div class="mb-3">
               <label for="expenseDate" class="form-label">Purchase Date</label>
               <input
-                type="date" name="dates"
+                type="date"
+                name="dates"
                 class="form-control"
                 id="expenseDate"
                 value="${new Date().toISOString().split('T')[0]}"
                 required
               />
             </div>
-            <button type="submit" name="add" id="addExpense" class="btn btn-success">
+            <button
+              type="submit"
+              name="add"
+              id="addExpense"
+              class="btn btn-success"
+            >
               Add Stock
             </button>
           </form>
@@ -146,152 +176,6 @@
       </div>
     </div>
 
-    <!-- mid-body starts -->
-    <div class="box">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="box-part text-center">
-              <i class="fab fa-connectdevelop fa-4x"></i>
-
-              <div class="title">
-                <h3>Weekly</h3>
-              </div>
-              <div class="text">
-                <div>Total Savings: <span id="totalSavings"></span></div>
-                <div>Total Expenses: <span id="totalExpenses"></span></div>
-              </div>
-
-              <a href="#" data-bs-toggle="modal" data-bs-target="#weeklyModal"
-                >See More <i class="fas fa-chevron-circle-right"></i
-              ></a>
-            </div>
-            <!-- modal is here  -->
-            <div
-              class="modal fade"
-              id="weeklyModal"
-              tabindex="-1"
-              aria-labelledby="weeklyModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="weeklyModalLabel">
-                      Weekly Track
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <canvas id="weeklyChart" width="800" height="800"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- modal  -->
-          </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="box-part text-center">
-              <i class="fas fa-clipboard fa-3x mb-3"></i>
-              <div class="title">
-                <h3>Monthly</h3>
-              </div>
-              <div class="text">
-                <span>
-                  Highest Category:
-                  <span id="maxCategory"></span>
-                </span>
-                <p>Highest Amount: <span id="maxCategoryNumber"></span></p>
-              </div>
-
-              <a href="#" data-bs-toggle="modal" data-bs-target="#monthly"
-                >See More <i class="fas fa-chevron-circle-right"></i
-              ></a>
-            </div>
-
-            <!-- modal is here  -->
-            <div
-              class="modal fade"
-              id="monthly"
-              tabindex="-1"
-              aria-labelledby="monthlyLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                      Monthly Expenses
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <canvas id="monthlyChart" width="800" height="800"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- modal  -->
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="box-part text-center">
-              <i class="fas fa-users fa-4x"></i>
-              <div class="title">
-                <h3>Yearly</h3>
-              </div>
-              <div class="text">
-                <div>Total Savings: <span id="totalSavingsYear"></span></div>
-                <div>Total Expenses: <span id="totalExpensesYear"></span></div>
-              </div>
-
-              <a href="#" data-bs-toggle="modal" data-bs-target="#yearlyModal"
-                >See More <i class="fas fa-chevron-circle-right"></i
-              ></a>
-            </div>
-            <!-- modal is here  -->
-            <div
-              class="modal fade"
-              id="yearlyModal"
-              tabindex="-1"
-              aria-labelledby="yearlyModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="yearlyModalLabel">
-                      Yearly Track
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <canvas id="yearlyChart" width="400" height="400"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- modal  -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- mid-body ends -->
     <!-- 
     <div class="mb-5">
       <div class="container">
@@ -333,10 +217,14 @@
             <p>Email: contact@scorpions.com<br />Phone: +91-123-456-7890</p>
             <p>
               <a href="#" class="text-white me-3"
-                ><i class="fab fa-facebook fa-2x"></i></a>
+                ><i class="fab fa-facebook fa-2x"></i
+              ></a>
               <a href="#" class="text-white me-3"
-                ><i class="fab fa-twitter fa-2x"></i></a>
-              <a href="#" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+                ><i class="fab fa-twitter fa-2x"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin fa-2x"></i
+              ></a>
             </p>
           </div>
           <div class="col-md-5 mt-3">
@@ -369,6 +257,7 @@
         </div>
       </div>
     </footer>
+
     <script src="/static/weeklyChart.js"></script>
     <script src="/static/monthlyChart.js"></script>
     <script src="/static/yearlyChart.js"></script>
