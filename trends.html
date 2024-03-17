@@ -78,7 +78,11 @@
     <div class="col-lg-9">
       <div class="container">
         <h2 class="mb-4">Latest Trends Posts</h2>
-        <div class="row">
+        <label for="date">Select Date:</label>
+<input type="date" id="date" name="date" required>
+<button id="fetchButton">Fetch News</button>
+        <br><br>
+        <div class="row" id="newsContainer">
           <div class="col-md-6 mb-4">
             <div class="card card-trends">
               <img
@@ -172,44 +176,38 @@
       </div>
     </div>
     <div class="col-lg-3">
-      <h2 class="mb-4">Latest News</h2>
-      <div class="card card-news mb-2">
-        <div class="card-body">
-          <h5 class="card-title">Nasdaq hits record high as Nvidia spikes 15% after strong earnings</h5>
-          <p class="card-text" style="text-overflow:ellipsis;">Nvidia Corp's net income for the fourth quarter ended
-            January 28, 2024 grew by 769 percent on-year and 33 percent sequentially to $12.3 billion, driven by
-            increasing demand for artificial intelligence worldwide.</p>
-          <a href="https://www.moneycontrol.com/news/world/international-results/nasdaq-hits-record-high-as-nvidia-spikes-15-after-strong-earnings-12334771.html"
-            class="btn btn-success">Show More</a>
+      <h2 class="mb-4">Daily news</h2>
+      <div id="daily-news">
+        <div class="card card-news mb-2">
+            <div class="card-body">
+                <h5 class="card-title">Nasdaq hits record high as Nvidia spikes 15% after strong earnings</h5>
+                <p class="card-text" style="text-overflow:ellipsis;">Nvidia Corp's net income for the fourth quarter ended January 28, 2024 grew by 769 percent on-year and 33 percent sequentially to $12.3 billion, driven by increasing demand for artificial intelligence worldwide.</p>
+                <a href="https://www.moneycontrol.com/news/world/international-results/nasdaq-hits-record-high-as-nvidia-spikes-15-after-strong-earnings-12334771.html" class="btn btn-success">Show More</a>
+            </div>
         </div>
-      </div>
-      <div class="card card-news mb-2">
-        <div class="card-body">
-          <h5 class="card-title">Gold slips as dollar firms after US data signals resilient economy</h5>
-          <p class="card-text">Spot gold lost 0.1% to $2,024.01 an ounce by 10:56 a.m. ET (1556 GMT), after hitting its
-            highest since Feb. 9 of $2034.69 earlier in the session. US gold futures was steady at $2,033.50.</p>
-          <a href="https://www.moneycontrol.com/news/business/markets/gold-slips-as-dollar-firms-after-us-data-signals-resilient-economy-12334761.html"
-            class="btn btn-success">Show More</a>
+        <div class="card card-news mb-2">
+            <div class="card-body">
+                <h5 class="card-title">Gold slips as dollar firms after US data signals resilient economy</h5>
+                <p class="card-text">Spot gold lost 0.1% to $2,024.01 an ounce by 10:56 a.m. ET (1556 GMT), after hitting its highest since Feb. 9 of $2034.69 earlier in the session. US gold futures was steady at $2,033.50.</p>
+                <a href="https://www.moneycontrol.com/news/business/markets/gold-slips-as-dollar-firms-after-us-data-signals-resilient-economy-12334761.html" class="btn btn-success">Show More</a>
+            </div>
         </div>
-      </div>
-      <div class="card card-news mb-2">
-        <div class="card-body">
-          <h5 class="card-title">Rupee rises 13 paise to close at 82.83 against US dollar</h5>
-          <p class="card-text">Forex traders said elevated crude oil prices weighed on the local unit and restricted a
-            sharp uptick.</p>
-          <a href="https://www.moneycontrol.com/news/business/markets/rupee-rises-13-paise-to-close-at-82-83-against-us-dollar-12332431.html"
-            class="btn btn-success">Show More</a>
+        <div class="card card-news mb-2">
+            <div class="card-body">
+                <h5 class="card-title">Rupee rises 13 paise to close at 82.83 against US dollar</h5>
+                <p class="card-text">Forex traders said elevated crude oil prices weighed on the local unit and restricted a sharp uptick.</p>
+                <a href="https://www.moneycontrol.com/news/business/markets/rupee-rises-13-paise-to-close-at-82-83-against-us-dollar-12332431.html" class="btn btn-success">Show More</a>
+            </div>
         </div>
-      </div>
-      <div class="card card-news mb-2">
-        <div class="card-body">
-          <h5 class="card-title">Oil rises on shipping tensions but US inventory build caps gains</h5>
-          <p class="card-text">Brent crude futures were up 51 cents to $83.54 a barrel at 11:49 ET (1649 GMT). US West
-            Texas Intermediate crude futures were up 64 cents at $78.55 a barrel.</p>
-          <a href="https://www.moneycontrol.com/news/business/markets/oil-rises-on-shipping-tensions-but-us-inventory-build-caps-gains-12334751.html"
-            class="btn btn-success">Show More</a>
+        <div class="card card-news mb-2">
+            <div class="card-body">
+                <h5 class="card-title">Oil rises on shipping tensions but US inventory build caps gains</h5>
+                <p class="card-text">Brent crude futures were up 51 cents to $83.54 a barrel at 11:49 ET (1649 GMT). US West Texas Intermediate crude futures were up 64 cents at $78.55 a barrel.</p>
+                <a href="https://www.moneycontrol.com/news/business/markets/oil-rises-on-shipping-tensions-but-us-inventory-build-caps-gains-12334751.html" class="btn btn-success">Show More</a>
+            </div>
         </div>
-      </div>
+    </div>
+    
       <div class="news-letter p-3 mt-4 mb-3">
         <h3 class="mb-3">Subscribe for daily news updates:</h3>
         
@@ -218,8 +216,10 @@
     <span class="input-group-text btn btn-success">
         <i class="fas fa-paper-plane"></i>
     </span>
+ 
+  </div>
       </div>
-      </div>
+
     </div>
   </div>
 </div>
@@ -263,8 +263,12 @@
 
 
   <!-- footer section ends here  -->
+  <script src="js/chatbot.js"></script>
+<script src="js/piechart.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
+<script src="fetch.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 
 </html>
