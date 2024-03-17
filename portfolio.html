@@ -36,7 +36,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item me-5">
               <a
-                class="nav-link disabled"
+                class="nav-link active"
                 aria-current="page"
                 href="homepage.html"
                 >Home</a
@@ -50,18 +50,10 @@
             </li>
             <li class="nav-item me-5">
               <a
-                class="nav-link active"
-                aria-current="page"
-                href="investment.html"
-                >Investment</a
-              >
-            </li>
-            <li class="nav-item me-5">
-              <a
-                class="nav-link active"
+                class="nav-link disabled"
                 aria-current="page"
                 href="expenses.html"
-                >Expenses</a
+                >Portfolio</a
               >
             </li>
             <li class="nav-item me-5">
@@ -160,6 +152,153 @@
         </div>
       </div>
     </div>
+
+    <!-- mid-body starts -->
+    <div class="box">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="box-part text-center">
+              <i class="fab fa-connectdevelop fa-4x"></i>
+
+              <div class="title">
+                <h3>Weekly</h3>
+              </div>
+              <div class="text">
+                <div>Total Savings: <span id="totalSavings"></span></div>
+                <div>Total Expenses: <span id="totalExpenses"></span></div>
+              </div>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#weeklyModal"
+                >See More <i class="fas fa-chevron-circle-right"></i
+              ></a>
+            </div>
+            <!-- modal is here  -->
+            <div
+              class="modal fade"
+              id="weeklyModal"
+              tabindex="-1"
+              aria-labelledby="weeklyModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="weeklyModalLabel">
+                      Weekly Track
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <canvas id="weeklyChart" width="800" height="800"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal  -->
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="box-part text-center">
+              <i class="fas fa-clipboard fa-3x mb-3"></i>
+              <div class="title">
+                <h3>Monthly</h3>
+              </div>
+              <div class="text">
+                <span>
+                  Highest Category:
+                  <span id="maxCategory"></span>
+                </span>
+                <p>Highest Amount: <span id="maxCategoryNumber"></span></p>
+              </div>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#monthly"
+                >See More <i class="fas fa-chevron-circle-right"></i
+              ></a>
+            </div>
+
+            <!-- modal is here  -->
+            <div
+              class="modal fade"
+              id="monthly"
+              tabindex="-1"
+              aria-labelledby="monthlyLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Monthly Expenses
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <canvas id="monthlyChart" width="800" height="800"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal  -->
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="box-part text-center">
+              <i class="fas fa-users fa-4x"></i>
+              <div class="title">
+                <h3>Yearly</h3>
+              </div>
+              <div class="text">
+                <div>Total Savings: <span id="totalSavingsYear"></span></div>
+                <div>Total Expenses: <span id="totalExpensesYear"></span></div>
+              </div>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#yearlyModal"
+                >See More <i class="fas fa-chevron-circle-right"></i
+              ></a>
+            </div>
+            <!-- modal is here  -->
+            <div
+              class="modal fade"
+              id="yearlyModal"
+              tabindex="-1"
+              aria-labelledby="yearlyModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="yearlyModalLabel">
+                      Yearly Track
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <canvas id="yearlyChart" width="400" height="400"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- mid-body ends -->
     <!-- 
     <div class="mb-5">
       <div class="container">
@@ -241,6 +380,9 @@
         </div>
       </div>
     </footer>
+    <script src="js/weeklyChart.js"></script>
+    <script src="js/monthlyChart.js"></script>
+    <script src="js/yearlyChart.js"></script>
     <script src="js/piechart.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>

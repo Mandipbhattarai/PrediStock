@@ -191,3 +191,44 @@
     rgba(220, 53, 69, 0.1) 0px -3px 0px inset;
   color: white;
 }
+
+/* expenses  */
+
+.box a {
+  text-decoration: none !important;
+  color: #050505;
+}
+
+.box {
+  margin-bottom: 60px;
+}
+
+.box-part {
+  background: linear-gradient(110deg, #e6e6e6 60%, #d9dad9 60%);
+  border-radius: 0;
+  padding: 60px 10px;
+  margin: 30px 0;
+  color: #1b1a1a;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+}
+
+.box-part:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px,
+    rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px,
+    rgba(0, 0, 0, 0.09) 0 -3px 5px;
+  transition: 0.4s;
+}
+
+.text {
+  margin: 20px 0;
+}
+
+.box-part > i {
+  color: #000000;
+}
+
+.image-advantage {
+  height: 100%;
+  width: 100%;
+}
