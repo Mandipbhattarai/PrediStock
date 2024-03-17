@@ -1,0 +1,193 @@
+/* header top css here  */
+.navbar-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background: #f9f7f7;
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+  color: rgb(134, 134, 134);
+}
+.heading-homepage {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.about-system-header {
+  font-size: 2rem;
+}
+
+.news-letter {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-trends {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  min-height: 33rem;
+}
+
+.card-news {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.card-trends {
+  overflow: hidden;
+}
+
+.card-trends .card-img-top {
+  transition: transform 0.5s;
+}
+
+.card-trends .card-img-top:hover {
+  transform: scale(1.1);
+}
+
+/* footer section starts here  */
+.main-footer {
+  background-color: #1b1a1a;
+}
+.text-body {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.image-home {
+  border-radius: 20px;
+}
+
+.contact-box {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 10px;
+}
+
+.people-thoughts {
+  background-color: #f9f9f9;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.testimonial {
+  background: #fff;
+  background-image: url(https://cdn.spiir.dk/spiirlandingpage/testimonials/testimonial-quote.svg);
+  background-repeat: no-repeat;
+  background-size: 16px 11px;
+  background-position: 20px 15px;
+  box-shadow: 0 0 5px #000;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  border-radius: 16px;
+  padding: 40px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonials {
+  border: none;
+}
+
+.testimonials-yellow:nth-child(2n),
+.yellow {
+  background-color: #ffc435;
+}
+
+/* Add this CSS to your stylesheet or style tag */
+.how-it-works {
+  padding: 10px 0;
+}
+
+.step {
+  text-align: center;
+  margin-bottom: 30px;
+  min-height: 16rem;
+}
+
+.step img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.step h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 14px;
+  padding: 20px;
+}
+
+.step {
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+}
+
+.fa-comments {
+  color: #3498db; /* Blue */
+}
+
+.fa-question-circle {
+  color: #e74c3c; /* Red */
+}
+
+.fa-thumbs-up {
+  color: #3498db; /* Cyan */
+}
+
+.logo-image {
+  height: 100%;
+  width: 12rem;
+}
+.line-homepage {
+  border: none;
+  color: white;
+}
+
+#addExpenseForm {
+  margin-bottom: 20px;
+}
+
+#expenseTable {
+  margin-top: 20px;
+}
+
+.expenseDaily {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  padding: 40px;
+}
+
+.table-expenses {
+  padding: 20px;
+}
+
+.expenses-section {
+  min-height: 550px;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) -20px -6px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.box-own-stock {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.25rem;
+}
+
+.success {
+  background-color: #28a745;
+  box-shadow: rgba(40, 167, 69, 0.6) 0px 2px 4px 0px,
+    rgba(40, 167, 69, 0.4) 0px 7px 13px -3px,
+    rgba(40, 167, 69, 0.1) 0px -3px 0px inset;
+  color: white;
+}
+
+.danger {
+  background-color: #dc3545;
+  box-shadow: rgba(220, 53, 69, 0.6) 0px 2px 4px 0px,
+    rgba(220, 53, 69, 0.4) 0px 7px 13px -3px,
+    rgba(220, 53, 69, 0.1) 0px -3px 0px inset;
+  color: white;
+}
