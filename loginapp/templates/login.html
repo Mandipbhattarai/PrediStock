@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Login Page</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        body {
+          background-color: #f0f2f5;
+          font-family: 'Poppins', sans-serif;
+        }
+        .background {
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        form {
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+          padding: 40px;
+          max-width: 400px;
+          width: 100%;
+        }
+        form h3 {
+          font-size: 30px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        label {
+          display: block;
+          font-size: 16px;
+          margin-bottom: 8px;
+          font-weight: 600;
+        }
+        input {
+          width: 100%;
+          height: 48px;
+          padding: 0 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-bottom: 20px;
+          font-size: 16px;
+          transition: border-color 0.3s ease;
+        }
+        input:focus {
+          outline: none;
+          border-color: #198754;
+        }
+        button {
+          width: 100%;
+          height: 48px;
+          background-color: #198754;
+          color: #ffffff;
+          border: none;
+          border-radius: 4px;
+          font-size: 18px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        button:hover {
+          background-color: #147d43;
+        }
+        .social {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+        }
+        .social div {
+          margin: 0 10px;
+          padding: 10px 20px;
+          border-radius: 4px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .social div:hover {
+          background-color: #eaf0fb;
+        }
+        p {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 14px;
+        }
+        a {
+          color: #198754;
+          text-decoration: none;
+          font-weight: 600;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+.center{
+    position: relative;
+    top: -400px;
+    
+}
+
+      </style>
+</head>
+<body ><center class="center">
+    <div class="background" >
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="post" >
+        <h3>Login Here</h3>
+        {% csrf_token %} 
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter Username" id="username" name="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="pass">
+
+        <button type="submit">Log In</button>
+        <!-- <input type="button" value=""> -->
+        <!-- <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div> -->
+        <a href="{% url 'signup' %}" >Create a account</a>
+    </form></center>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Go - Blogs</title>
+    <link rel="icon" href="/static/logo.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <!-- navbar starts here  -->
+    <nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="/static/logo.png" alt="logo" width="90px" height="40px"/></a>
+        <button
+          class="navbar-toggler btn-close-danger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item me-5">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'home' %}"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item me-5">
+              <a class="nav-link active" aria-current="page" href="{% url 'trends' %}"
+                >Trends</a
+              >
+            </li>
+            <li class="nav-item me-5">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'portfolio' %}"
+                >Portfolio</a
+              >
+            </li>            
+            <li class="nav-item me-5">
+              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar ends here  -->
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 mt-4">
+          <h2 class="mb-4">Contact Us</h2>
+          <p class="mb-3">
+            Need to get in touch with us? You can fill out the enquiry form on
+            our website, or if you prefer, you can
+            <a href="mailto:jerryt2714@gmail.com">contact us</a> directly. We strive to
+            respond to all inquiries promptly and look forward to hearing from
+            you.
+          </p>
+          <div class="mt-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15121.416261786582!2d73.75954169494781!3d18.64810110166419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sPCCOE%20-%20Pimpri%20Chinchwad%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1708176172443!5m2!1sen!2sin"
+              class="iframe-img"
+              height="300"
+              width="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 p-4">
+          <div class="contact-box p-4">
+            <h2 class="text-center mb-3">Get in Touch</h2>
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Name</label>
+                <input
+                  type="text" name="name"
+                  class="form-control"
+                  id="exampleInputName"
+                  aria-describedby="nameHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail" class="form-label" 
+                  >Email address</label
+                >
+                <input
+                  type="email" name="email"
+                  class="form-control"
+                  id="exampleInputEmail"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputMessage" class="form-label" 
+                  >Message</label
+                >
+                <textarea
+                  class="form-control"
+                  id="exampleInputMessage"
+                  rows="3" name="message"
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" name="submit" class="btn btn-success"><a href="{% url 'send_email' %}">Send</a></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer section starts here  -->
+    <footer class="main-footer text-white">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-4 mt-3">
+            <h5>Contact Us</h5>
+            <p>Email: contact@scorpions.com<br />Phone: +91-123-456-7890</p>
+            <p>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook fa-2x"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter fa-2x"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin fa-2x"></i
+              ></a>
+            </p>
+          </div>
+          <div class="col-md-5 mt-3">
+            <h5>About Us</h5>
+            <p class="me-sm-5" style="text-align: justify">
+              Our Conversational Recommender System is designed to simplify the
+              complexities of the stock market, offering clear explanations and
+              insights to empower users with the knowledge needed to make
+              informed investment choices.
+            </p>
+          </div>
+          <div class="col-md-3 mt-3">
+            <h5 class="mb-4">Developers</h5>
+            <ul class="list-unstyled">
+              <li>Ranjeet Chaudhary</li>
+              <li>Abhishek Chavan</li>
+              <li>Sagar Pariyar</li>
+              <li>Mandip Bhattarai</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="py-2">
+        <div class="container text-center">
+          <p class="mb-0">
+            © 2024 <a href="#" class="text-body"> Team Scorpions</a>. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer section ends here  -->
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/script.js"></script>
+  </body>
+</html>

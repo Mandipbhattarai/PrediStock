@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Go</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+
+    <!-- navbar starts here  -->
+    <nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="/static/logo.png" alt="logo" width="90px" height="40px"/></a>
+        <button
+          class="navbar-toggler btn-close-danger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item me-5">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'home' %}"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item me-5">
+              <a class="nav-link active" aria-current="page" href="{% url 'trends' %}"
+                >Trends</a
+              >
+            </li>
+            <li class="nav-item me-5">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'portfolio' %}"
+                >Portfolio</a
+              >
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"
+                >Contact</a>
+            </li>
+            <li>
+              <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <div class="container mb-5 image-home">
+      <div class="row">
+        <div class="col-lg-6 p-4 col-sm-12">
+          <div class="awareness">
+            <div class="heading-homepage">
+              Empowering Your Investment Decisions with AI.
+            </div>
+            <p class="about-system-header">
+              Our system uses advanced AI to provide personalized stock
+              recommendations based on your goals and risk tolerance.
+            </p>
+            <a class="btn btn-success" href="#"> Get Started </a>
+          </div>
+        </div>
+        <div class="col-lg-6"></div>
+      </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

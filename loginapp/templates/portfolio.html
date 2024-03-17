@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predistock - Portfolio</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <!-- navbar starts here  -->
+    <nav class="navbar mb-5 navbar-shadow navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="/static/logo.png" alt="logo" class="logo-image"
+        /></a>
+        <button
+          class="navbar-toggler btn-close-danger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item me-5">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'home' %}"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item me-5">
+              <a class="nav-link active" aria-current="page" href="{% url 'trends' %}"
+                >Trends</a
+              >
+            </li>
+            <li class="nav-item me-5">
+              <a
+                class="nav-link disabled"
+                aria-current="page"
+                href="{% url 'portfolio' %}"
+                >Portfolio</a
+              >
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"
+                >Contact</a
+              >
+            </li>
+            <li>
+                <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar ends here  -->
+    <!-- Custom Modal -->
+
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 expenseDaily">
+          <h2>Add New Stock</h2>
+          <form id="expenseForm" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="expenseName" class="form-label">Stock Name</label>
+              <input
+                type="text" name="name"
+                class="form-control"
+                id="expenseName"
+                required/>
+            </div>
+            <div class="mb-3">
+              <label for="expenseAmount" class="form-label">Stock Price</label>
+              <input
+                type="number" name="expense"
+                class="form-control"
+                id="expenseAmount"
+                required/>
+            </div>
+            <div class="mb-3">
+              <label for="expenseCategory" class="form-label"
+                >Stock Category</label>
+              <select class="form-select" id="expenseCategory" name="options" type="text" required>
+                <option value="">Select Category</option>
+                <option value="technology">Technology</option>
+                <option value="communication">Communication</option>
+                <option value="consumer">Consumer</option>
+                <option value="industrials">Industrials</option>
+                <option value="materials">Materials</option>
+                <option value="financials">Financials</option>
+                <option value="realEstate">Real Estate</option>
+                <option value="healthCare">Health Care</option>
+                <option value="consumerStaples">Consumer Staples</option>
+                <option value="energy">Energy</option>
+                <option value="utilities">Utilities</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="expenseDate" class="form-label">Purchase Date</label>
+              <input
+                type="date" name="dates"
+                class="form-control"
+                id="expenseDate"
+                value="${new Date().toISOString().split('T')[0]}"
+                required
+              />
+            </div>
+            <button type="submit" name="add" id="addExpense" class="btn btn-success">
+              Add Stock
+            </button>
+          </form>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <div class="expenses-section">
+            <h2>Stock Lists</h2>
+            <table class="table table-expenses" id="stockList">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Stock Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Purchase Date</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mid-body starts -->
+    <div class="box">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="box-part text-center">
+              <i class="fab fa-connectdevelop fa-4x"></i>
+
+              <div class="title">
+                <h3>Weekly</h3>
+              </div>
+              <div class="text">
+                <div>Total Savings: <span id="totalSavings"></span></div>
+                <div>Total Expenses: <span id="totalExpenses"></span></div>
+              </div>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#weeklyModal"
+                >See More <i class="fas fa-chevron-circle-right"></i
+              ></a>
+            </div>
+            <!-- modal is here  -->
+            <div
+              class="modal fade"
+              id="weeklyModal"
+              tabindex="-1"
+              aria-labelledby="weeklyModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="weeklyModalLabel">
+                      Weekly Track
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <canvas id="weeklyChart" width="800" height="800"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal  -->
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="box-part text-center">
+              <i class="fas fa-clipboard fa-3x mb-3"></i>
+              <div class="title">
+                <h3>Monthly</h3>
+              </div>
+              <div class="text">
+                <span>
+                  Highest Category:
+                  <span id="maxCategory"></span>
+                </span>
+                <p>Highest Amount: <span id="maxCategoryNumber"></span></p>
+              </div>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#monthly"
+                >See More <i class="fas fa-chevron-circle-right"></i
+              ></a>
+            </div>
+
+            <!-- modal is here  -->
+            <div
+              class="modal fade"
+              id="monthly"
+              tabindex="-1"
+              aria-labelledby="monthlyLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Monthly Expenses
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <canvas id="monthlyChart" width="800" height="800"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal  -->
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="box-part text-center">
+              <i class="fas fa-users fa-4x"></i>
+              <div class="title">
+                <h3>Yearly</h3>
+              </div>
+              <div class="text">
+                <div>Total Savings: <span id="totalSavingsYear"></span></div>
+                <div>Total Expenses: <span id="totalExpensesYear"></span></div>
+              </div>
+
+              <a href="#" data-bs-toggle="modal" data-bs-target="#yearlyModal"
+                >See More <i class="fas fa-chevron-circle-right"></i
+              ></a>
+            </div>
+            <!-- modal is here  -->
+            <div
+              class="modal fade"
+              id="yearlyModal"
+              tabindex="-1"
+              aria-labelledby="yearlyModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="yearlyModalLabel">
+                      Yearly Track
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <canvas id="yearlyChart" width="400" height="400"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- mid-body ends -->
+    <!-- 
+    <div class="mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box-own-stock success p-3 m-5 rounded">
+              <p class="mb-0">AAPL</p>
+              <p class="mb-0">$150.25</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box-own-stock danger p-3 m-5 rounded">
+              <p class="mb-0">GOOGL</p>
+              <p class="mb-0">$2800.50</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box-own-stock success p-3 m-5 rounded">
+              <p class="mb-0">AAPL</p>
+              <p class="mb-0">$150.25</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box-own-stock danger p-3 m-5 rounded">
+              <p class="mb-0">GOOGL</p>
+              <p class="mb-0">$2800.50</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- footer section starts here  -->
+    <footer class="main-footer text-white">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-4 mt-3">
+            <h5>Contact Us</h5>
+            <p>Email: contact@scorpions.com<br />Phone: +91-123-456-7890</p>
+            <p>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook fa-2x"></i></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+            </p>
+          </div>
+          <div class="col-md-5 mt-3">
+            <h5>About Us</h5>
+            <p class="me-sm-5" style="text-align: justify">
+              Our Conversational Recommender System is designed to simplify the
+              complexities of the stock market, offering clear explanations and
+              insights to empower users with the knowledge needed to make
+              informed investment choices.
+            </p>
+          </div>
+          <div class="col-md-3 mt-3">
+            <h5 class="mb-4">Developers</h5>
+            <ul class="list-unstyled">
+              <li>Ranjeet Chaudhary</li>
+              <li>Abhishek Chavan</li>
+              <li>Sagar Pariyar</li>
+              <li>Mandip Bhattarai</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="py-2">
+        <div class="container text-center">
+          <p class="mb-0">
+            © 2024 <a href="#" class="text-body"> Team Scorpions</a>. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/static/weeklyChart.js"></script>
+    <script src="/static/monthlyChart.js"></script>
+    <script src="/static/yearlyChart.js"></script>
+    <script src="/static/piechart.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
