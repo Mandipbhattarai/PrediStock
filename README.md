@@ -46,8 +46,8 @@ As per our understanding of the problem statement, we created a website for stoc
 
 
 ## Video Link
-[https://www.loom.com/share/473f84f19a6240a0a2679345ed21b67c](url)
-[https://www.loom.com/share/1a6291e5eee241a5b842674059ee4e88](url)
+## [https://www.loom.com/share/473f84f19a6240a0a2679345ed21b67c](url)
+## [https://www.loom.com/share/1a6291e5eee241a5b842674059ee4e88](url)
 
 
 
